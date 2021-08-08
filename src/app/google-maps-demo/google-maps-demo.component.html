@@ -1,0 +1,9 @@
+<div *ngIf="apiLoaded | async">
+  <google-map
+    [center]="center"
+    [options]="options"
+    (mapClick)="click($event)"
+    width="100%"
+    height="500px">
+  </google-map>
+</div>
