@@ -1,0 +1,19 @@
+<mat-drawer-container class="example-container" hasBackdrop="false">
+  <mat-drawer #drawer mode="side" opened>Drawer content</mat-drawer>
+  <mat-drawer-content appFluidHeight>
+    <app-map>
+    </app-map>
+
+  <button
+    mat-raised-button
+    class="explore__toggle-list-btn"
+    aria-label="Toggle list"
+    (click)="drawer.toggle()">
+    <mat-icon aria-hidden="false" aria-label="Toggle list">
+      {{ drawer.opened ? 'chevron_left' : 'chevron_right' }}
+    </mat-icon>
+    {{ drawer.opened ? '' : 'Show list' }}
+  </button>
+  </mat-drawer-content>
+</mat-drawer-container>
+

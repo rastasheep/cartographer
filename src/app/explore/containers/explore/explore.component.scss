@@ -1,0 +1,11 @@
+.explore {
+
+  &__toggle-list-btn {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-left: 24px;
+    margin-top: 24px;
+    transition: transform 850ms cubic-bezier(0.25, 1, 0.5, 1) 0s;
+  }
+}
