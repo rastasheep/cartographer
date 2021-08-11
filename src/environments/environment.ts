@@ -4,7 +4,15 @@
 
 export const environment = {
   production: false,
-  googleMapsApiKey: 'AIzaSyCE5VawUOpXoMxLiN9To2CtzwT3DXWt9lU'
+  googleMapsApiKey: 'AIzaSyCE5VawUOpXoMxLiN9To2CtzwT3DXWt9lU',
+  firebase: {
+    apiKey: "AIzaSyBCWlW4McSJQUEWWWopTmGQMKO8wxHoa1o",
+    authDomain: "cartographer-322216.firebaseapp.com",
+    projectId: "cartographer-322216",
+    storageBucket: "cartographer-322216.appspot.com",
+    messagingSenderId: "940099492174",
+    appId: "1:940099492174:web:dc9cf8fe10da94936d261f"
+  }
 };
 
 /*

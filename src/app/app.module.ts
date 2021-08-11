@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -19,6 +22,8 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
     MatToolbarModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [
     { provide: 'Window', useValue: window }

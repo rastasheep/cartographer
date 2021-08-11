@@ -4,5 +4,11 @@
   <span>Cartographer</span>
 </mat-toolbar>
 
+<ul>
+  yo
+  <li class="text" *ngFor="let item of items | async">
+    {{item.name}}
+  </li>
+</ul>
 <router-outlet>
 </router-outlet>

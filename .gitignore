@@ -43,3 +43,12 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Terraform stuff
+terraform.tfstate
+terraform.tfstate.backup
+infrastructure/dev/.terraform
+infrastructure/dev/.terraform.lock.hcl
+
+# Secrets
+infrastructure/dev/account.json
