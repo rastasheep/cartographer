@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { GeolocationService } from '../../geolocation.service';
-import { MapService } from '../../map.service';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
+import { GeolocationService } from '../../services/geolocation.service';
+import { MapService } from '../../services/map.service';
+import { LatLngLiteral, MapOptions, MappablePin } from '@app/models';
 
 @Component({
   selector: 'app-map',
@@ -10,8 +11,12 @@ import { MapService } from '../../map.service';
 })
 export class MapComponent implements OnInit {
   mapLoaded: Observable<boolean>;
-  center: google.maps.LatLngLiteral = {lat: 1, lng: 1};
-  options: google.maps.MapOptions;
+  center: LatLngLiteral = {lat: 1, lng: 1};
+  options: MapOptions;
+
+  @Input() pins: MappablePin[] = [];
+  @Output() pinMouseover = new EventEmitter<MappablePin>()
+  @Output() pinMouseout = new EventEmitter<MappablePin>()
 
   constructor(
     public Map: MapService,
@@ -31,4 +36,15 @@ export class MapComponent implements OnInit {
     console.log(event)
   }
 
+  mapClickPin(pin: MappablePin) {
+    console.log(pin);
+  }
+
+  mapMouseoverPin(pin: MappablePin) {
+    this.pinMouseover.emit(pin);
+  }
+
+  mapMouseoutPin(pin: MappablePin) {
+    this.pinMouseout.emit(pin);
+  }
 }
