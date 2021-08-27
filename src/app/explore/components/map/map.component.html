@@ -5,5 +5,15 @@
     (mapClick)="click($event)"
     width="100%"
     height="100%">
+
+    <map-marker
+      *ngFor="let pin of pins"
+      [position]="pin.position"
+      [options]="pin.options"
+      (mapMouseover)="mapMouseoverPin(pin)"
+      (mapMouseout)="mapMouseoutPin(pin)"
+      (mapClick)="mapClickPin(pin)">
+    </map-marker>
+
   </google-map>
 </div>
